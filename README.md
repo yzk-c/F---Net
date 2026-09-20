@@ -177,51 +177,6 @@ FARM constructs three dilated-convolution branches with large, medium, and small
 
 SDCM uses deep semantics to filter shallow high-frequency details and the refined details to sharpen deep boundaries. Context aggregation, channel calibration, and residual addition then fuse the modulated semantic feature with shallow low-frequency information.
 
-## Quantitative Results
-
-All values below are taken from the paper.
-
-### Comparison on M3FD
-
-| Model | Precision | Recall | mAP50 | mAP50:95 | Params (M) |
-|---|---:|---:|---:|---:|---:|
-| YOLO11s | 0.800 | 0.590 | 0.671 | 0.421 | 9.42 |
-| YOLO12s | 0.786 | 0.602 | 0.674 | 0.417 | 9.23 |
-| YOLO13s | 0.773 | 0.566 | 0.640 | 0.417 | 9.00 |
-| YOLO26s | 0.773 | 0.617 | 0.692 | 0.423 | 9.45 |
-| YOLO-Master | 0.793 | **0.621** | 0.691 | 0.432 | 2.80 |
-| Hyper-YOLO | 0.802 | 0.590 | 0.669 | 0.422 | 2.04 |
-| LSNet | 0.720 | 0.536 | 0.631 | 0.357 | 19.40 |
-| Mamba-YOLO-T | 0.789 | 0.597 | 0.679 | 0.421 | 5.99 |
-| Mamba-ViT-YOLO | 0.794 | 0.588 | 0.667 | 0.397 | 1.80 |
-| **FADENet** | **0.816** | 0.616 | **0.711** | **0.439** | 3.86 |
-
-### Comparison on MFAD
-
-| Model | Precision | Recall | mAP50 | mAP50:95 | Params (M) |
-|---|---:|---:|---:|---:|---:|
-| YOLO11s | 0.763 | 0.601 | 0.670 | 0.446 | 9.42 |
-| YOLO12s | **0.797** | 0.561 | 0.649 | 0.435 | 9.23 |
-| YOLO13s | 0.791 | **0.611** | **0.688** | **0.459** | 9.00 |
-| YOLO26n | 0.765 | 0.556 | 0.639 | 0.404 | 2.38 |
-| YOLO-Master | 0.770 | 0.566 | 0.650 | 0.430 | 2.80 |
-| Hyper-YOLO | 0.758 | 0.547 | 0.627 | 0.409 | 2.04 |
-| LSNet | 0.742 | 0.516 | 0.612 | 0.376 | 19.40 |
-| Mamba-YOLO-T | 0.791 | 0.583 | 0.670 | 0.448 | 5.99 |
-| Mamba-ViT-YOLO | 0.751 | 0.534 | 0.610 | 0.384 | 1.80 |
-| **FADENet** | 0.763 | 0.604 | 0.682 | 0.456 | 3.86 |
-
-### Ablation Study
-
-| JSWD | FARM | SDCM | Precision | Recall | mAP50 | mAP50:95 | Params (M) |
-|:---:|:---:|:---:|---:|---:|---:|---:|---:|
-|  |  |  | 0.711 | 0.510 | 0.590 | 0.357 | 1.61 |
-| ✓ |  |  | 0.753 | 0.575 | 0.645 | 0.394 | 2.60 |
-| ✓ | ✓ |  | 0.782 | 0.594 | 0.680 | 0.418 | 2.73 |
-| ✓ | ✓ | ✓ | **0.816** | **0.616** | **0.711** | **0.439** | 3.86 |
-
-JSWD raises the baseline mAP50 from 0.590 to 0.645 by preserving high-frequency texture and local detail during downsampling. FARM further reaches 0.680 through frequency routing and adaptive context modeling. Adding SDCM yields 0.711 by suppressing shallow background noise while sharpening boundaries.
-
 ## Citation
 
 If this code is useful in your research, please cite the associated paper. Formal BibTeX metadata will be added after the author and publication information is finalized.
