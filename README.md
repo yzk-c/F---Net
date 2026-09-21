@@ -32,19 +32,46 @@ The main implementation is located in [`ultralytics/nn/modules/FADENet.py`](ultr
 ## Requirements
 
 - Python 3.10 (recommended)
-- PyTorch 2.x
+- PyTorch 2.7 or later
+- Torchvision 0.22 or later
 - CUDA-compatible GPU (recommended for training)
 - Additional packages declared in `pyproject.toml`
 
-Create an environment and install the project in editable mode:
+Create a clean environment:
 
 ```bash
 conda create -n fadenet python=3.10 -y
 conda activate fadenet
-pip install -e .
 ```
 
-Install a CUDA-enabled PyTorch build compatible with your driver before GPU training. CPU execution is also supported.
+Install PyTorch for your hardware using the [official installation selector](https://pytorch.org/get-started/locally/). NVIDIA RTX 50-series GPUs use the Blackwell `sm_120` architecture and require a PyTorch build compiled with CUDA 12.8 or later. A compatible Windows/Linux installation is:
+
+```bash
+python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
+```
+
+Install FADENet only after the correct PyTorch build is available:
+
+```bash
+python -m pip install -e .
+```
+
+CPU users and users of other GPU platforms should select the corresponding PyTorch build from the official selector.
+
+### RTX 50-Series Troubleshooting
+
+If training fails with the following error, the installed PyTorch binary does not contain kernels for the Blackwell GPU:
+
+```text
+CUDA error: no kernel image is available for execution on the device
+```
+
+Remove the incompatible build and reinstall the CUDA 12.8 build:
+
+```bash
+python -m pip uninstall -y torch torchvision torchaudio
+python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
+```
 
 ## Repository Layout
 
