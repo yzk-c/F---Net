@@ -21,7 +21,7 @@ This is the PyTorch implementation of **FADENet: Frequency-Aware Detail Enhancem
 
 ## Architecture
 
-![Architecture and feature flow of FADENet](./FADE_Net_recolored.png)
+![Architecture and feature flow of FADENet](./figures/FADE_Net_recolored.png)
 
 *Architecture and feature flow of FADENet. JSWD preserves and refines high-frequency details, FARM adaptively models multi-scale context, and SDCM enables bidirectional interaction between deep semantics and shallow details.*
 
@@ -59,7 +59,10 @@ FADENet/
 ├── weights/
 │   ├── M3FDbest.pt                     # M3FD pretrained checkpoint
 │   └── MFADbest.pt                     # MFAD pretrained checkpoint
-├── FADE_Net_recolored.png              # Architecture figure
+├── figures/
+│   ├── FADE_Net_recolored.png          # Architecture figure
+│   ├── detection.png                   # Detection visualization
+│   └── heatmap.png                     # Heatmap visualization
 ├── data.yaml                            # M3FD dataset configuration
 ├── data_mfad.yaml                       # MFAD dataset configuration
 ├── train.py                             # Training entry point
