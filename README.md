@@ -1,16 +1,19 @@
 # FADENet: Frequency-Aware Detail Enhancement Network for Object Detection 
 
-*[Author information pending]*
+*[Zikang Yan](mailto:zikangyan2026@163.com)<sup>a</sup>, [Weijia Chen](mailto:weijiachen1192@163.com)<sup>b</sup>, [Jiaming Liu](mailto:2402148@stu.neu.edu.cn)<sup>c</sup>, [Zhihan Fu](mailto:zhihan.fu@buct.edu.cn)<sup>d</sup>, [Liuyuze Huang](mailto:huanglyuze@163.com)<sup>e</sup>, [Yaoming Zhuang](mailto:zhuangyaoming@mail.neu.edu.cn)<sup>c,*</sup>*
 
-*[Affiliation / Institution pending]*
+<sup>a</sup> College of Information Science and Engineering, Northeastern University, Shenyang 110819, China  
+<sup>b</sup> School of Mechanical Engineering and Automation, Northeastern University, Shenyang 110819, China  
+<sup>c</sup> Faculty of Robot Science and Engineering, Northeastern University, Shenyang 110819, China  
+<sup>d</sup> College of Information Science and Technology, Beijing University of Chemical Technology, Beijing 100029, China  
+<sup>e</sup> School of Computer Science and Engineering, Northeastern University, Shenyang 110819, China  
+<sup>*</sup> Corresponding author: [Yaoming Zhuang](mailto:zhuangyaoming@mail.neu.edu.cn)
 
 This is the PyTorch implementation of **FADENet: Frequency-Aware Detail Enhancement Network for Object Detection**. This document summarizes the method, environment requirements, repository layout, dataset preparation, pretrained weights, and commands for training and evaluation.
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](LICENSE)
-
-> The current manuscript still contains placeholder author and affiliation fields. Replace the two lines above before public release.
 
 ## Performance at a Glance
 
